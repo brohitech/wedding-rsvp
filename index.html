@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RSVP | Rohit &amp; Sneha's Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="flower-decoration"></div>
+
+    <header class="header">
+      <div class="monogram">R &amp; S</div>
+      <h1 class="names">Rohit &amp; Sneha</h1>
+      <p class="date">Saturday, December 12, 2026</p>
+      <p class="venue">The Grand Garden Estate &bull; Mumbai, India</p>
+    </header>
+
+    <p class="intro">
+      Together with our families, we invite you to celebrate our wedding.<br>
+      Please let us know if you'll be able to join us.
+    </p>
+
+    <form id="rsvp-form" class="rsvp-form" novalidate>
+      <div class="form-group">
+        <label for="name">Your Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="e.g. Rohit Bale" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label class="attending-label">Will you be attending? <span class="required">*</span></label>
+        <div class="attending-options" role="radiogroup" aria-label="Attendance">
+          <label class="option">
+            <input type="radio" name="attending" value="Yes" required />
+            <span class="option-mark"></span>
+            <span>Yes, we'll be there!</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="attending" value="No" />
+            <span class="option-mark"></span>
+            <span>Sorry, we can't make it.</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="guests-section" class="form-group hidden">
+        <label for="guests">Number of guests (including you)</label>
+        <select id="guests" name="guests">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dietary">Dietary requirements or allergies</label>
+        <textarea id="dietary" name="dietary" rows="3" placeholder="e.g. vegetarian, nut allergy"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message for the couple</label>
+        <textarea id="message" name="message" rows="4" placeholder="Congratulations! We can't wait to celebrate with you."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Send RSVP</button>
+    </form>
+
+    <div id="thank-you" class="thank-you hidden">
+      <div class="checkmark">&#10004;</div>
+      <h2>Thank you!</h2>
+      <p>We've received your response and can't wait to celebrate with you.</p>
+      <button onclick="location.reload()" class="reset-btn">Send another response</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Questions? Email us at <a href="mailto:rohitbale1998@gmail.com">rohitbale1998@gmail.com</a></p>
+    <p class="small">Made with &#10084;&#65039; for Rohit &amp; Sneha's wedding</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
