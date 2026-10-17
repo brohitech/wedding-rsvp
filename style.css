@@ -3,13 +3,12 @@
 }
 
 :root {
-  --bg: #fbfaf7;
-  --card-bg: #ffffff;
-  --ink: #2d2430;
-  --muted: #6b6572;
-  --accent: #b56576;
-  --accent-soft: #f1e3e6;
-  --gold: #c9a227;
+  --ivory: #fdfbf7;
+  --champagne: #d4af37;
+  --maroon: #8a4b56;
+  --maroon-soft: rgba(138, 75, 86, 0.05);
+  --charcoal: #1a1a1a;
+  --charcoal-soft: #6b6572;
   --border: #e8e3dc;
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
@@ -20,20 +19,22 @@ html {
 
 body {
   margin: 0;
-  padding: 20px 0;
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
+  padding: 16px;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
+  font-family: 'Plus Jakarta Sans', 'Lato', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 .card {
-  background: var(--card-bg);
+  background: #ffffff;
   width: 100%;
   max-width: 440px;
   padding: 40px 28px 36px;
@@ -41,191 +42,144 @@ body {
   box-shadow: var(--shadow);
   text-align: center;
   position: relative;
+  overflow: visible;
+}
+
+/* ===== Hero Avatars (3-circle layout) ===== */
+.avatars {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: -25px;
+  margin: -12px 0 26px;
+}
+
+.avatar {
+  position: relative;
+  border-radius: 50%;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(138, 75, 86, 0.18);
 }
 
-.flower-decoration {
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 150px;
-  border: 2px solid var(--accent-soft);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.flower-decoration::before,
-.flower-decoration::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid var(--accent-soft);
-}
-
-.flower-decoration::before {
-  top: -28px;
-  left: -28px;
-  width: 95px;
-  height: 95px;
-  opacity: 0.5;
-}
-
-.flower-decoration::after {
-  bottom: -28px;
-  right: -28px;
-  width: 70px;
-  height: 70px;
-  opacity: 0.4;
-}
-
-/* Photos */
-.images {
-  position: relative;
-  z-index: 1;
-  margin: -10px 0 24px;
-}
-
-.photo {
-  border-radius: 50%;
+.avatar img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 4px solid var(--card-bg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  object-position: top center;
+  display: block;
+  border: inherit;
 }
 
-.photo.main {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  z-index: 2;
-}
-
-.photo.side {
+.avatar.side {
   width: 90px;
   height: 90px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  border: 2px solid var(--maroon);
   z-index: 1;
 }
 
-.photo.side.left {
-  left: -10px;
+.avatar.center {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--maroon);
+  z-index: 2;
+  margin: 0 -12px;
 }
 
-.photo.side.right {
-  right: -10px;
-}
-
-/* Header */
+/* ===== Header ===== */
 .header {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .invite-from {
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
-  color: var(--muted);
-  margin: 0 0 6px;
   font-weight: 400;
+  font-style: italic;
+  color: var(--charcoal-soft);
+  margin: 0 0 6px;
 }
 
 .invite-with {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--charcoal-soft);
   margin: 0 0 14px;
   font-weight: 300;
   letter-spacing: 0.3px;
 }
 
-.monogram {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 14px;
-  margin-bottom: 8px;
-}
-
 .names {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--ink);
-  margin: 0;
-  letter-spacing: 1px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: var(--charcoal);
+  margin: 0 0 6px;
+  line-height: 1.2;
 }
 
 .names .heart {
-  color: var(--accent);
-  margin: 0 6px;
-  font-size: 24px;
+  color: var(--maroon);
+  margin: 0 8px;
+  font-size: 42px;
 }
 
-/* Events */
-.events {
-  position: relative;
-  z-index: 1;
+/* ===== Schedule Cards ===== */
+.schedule {
   margin: 26px 0;
   text-align: left;
 }
 
-.event-day {
-  margin-bottom: 26px;
+.day-card {
+  background: rgba(138, 75, 86, 0.05);
+  border-left: 4px solid #8a4b56;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
 .day-title {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   font-weight: 700;
-  color: var(--accent);
+  color: #8a4b56;
   margin: 0 0 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-left: 3px solid var(--accent);
-  padding-left: 8px;
 }
 
-.event-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.detail-item {
+.detail-row {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: var(--ink);
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
 }
 
 .detail-icon {
   font-size: 16px;
   width: 24px;
   text-align: center;
+  flex-shrink: 0;
 }
 
-/* Venue */
+/* ===== Venue ===== */
 .venue {
-  position: relative;
-  z-index: 1;
   margin: 26px 0;
   padding: 18px 20px;
-  background: var(--accent-soft);
+  background: rgba(138, 75, 86, 0.04);
   border-radius: 16px;
+  border: 1px solid var(--border);
 }
 
 .venue-title {
   font-family: 'Playfair Display', serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--accent);
+  color: #8a4b56;
   margin: 0 0 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -234,96 +188,110 @@ body {
 .venue-name {
   font-size: 15px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--charcoal);
   margin: 0 0 4px;
 }
 
 .venue-address {
   font-size: 13px;
-  color: var(--muted);
-  margin: 0 0 12px;
+  color: var(--charcoal-soft);
+  margin: 0 0 14px;
   line-height: 1.5;
 }
 
 .map-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 13px;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background-color: #8a4b56;
+  color: #ffffff;
   font-weight: 600;
-  border: 1px solid var(--accent);
-  padding: 6px 14px;
-  border-radius: 20px;
-  transition: all 0.2s;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
 .map-link:hover {
-  background: var(--accent);
-  color: #fff;
+  background-color: #6f3d48;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 75, 86, 0.25);
 }
 
-/* Message */
+.map-link:active {
+  transform: scale(0.98);
+}
+
+/* ===== Message ===== */
 .message {
-  position: relative;
-  z-index: 1;
   margin: 26px 0;
 }
 
 .message-text {
+  font-family: 'Playfair Display', serif;
   font-size: 14px;
-  color: var(--muted);
+  color: var(--charcoal-soft);
   margin: 0;
   font-style: italic;
   line-height: 1.7;
 }
 
-/* Footer */
+/* ===== Card Footer ===== */
 .card-footer {
-  position: relative;
-  z-index: 1;
   margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
 
 .regards {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--charcoal-soft);
   margin: 0 0 4px;
 }
 
 .hosts {
   font-size: 13px;
   font-weight: 600;
-  color: var(--ink);
-  margin: 0;
+  color: var(--charcoal);
+  margin: 0 0 8px;
 }
 
-.site-footer {
-  margin-top: 30px;
+.card-footer-note {
   font-size: 11px;
-  color: var(--muted);
+  color: var(--charcoal-soft);
+  margin: 0;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 480px) {
   body {
-    padding: 16px 0;
+    padding: 14px;
+    justify-content: flex-start;
   }
   .card {
     padding: 32px 20px 28px;
     border-radius: 24px;
   }
-  .photo.main {
-    width: 130px;
-    height: 130px;
+  .avatars {
+    gap: -18px;
+    margin: -8px 0 22px;
   }
-  .photo.side {
+  .avatar.side {
     width: 80px;
     height: 80px;
   }
+  .avatar.center {
+    width: 130px;
+    height: 130px;
+    margin: 0 -8px;
+  }
   .names {
-    font-size: 26px;
+    font-size: 38px;
+  }
+  .names .heart {
+    font-size: 32px;
   }
 }
