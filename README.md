@@ -1,4 +1,4 @@
-# Rohit & Sneha Wedding RSVP
+# Rohit & Harika Wedding RSVP
 
 A simple, elegant wedding RSVP invitation hosted on GitHub Pages.
 
