@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RSVP | Rohit &amp; Harika's Wedding</title>
+  <title>Wedding Invitation | Sai Nandhan &amp; Sowmya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
@@ -13,81 +13,81 @@
   <div class="card">
     <div class="flower-decoration"></div>
 
+    <div class="images">
+      <img src="images/couple-1.jpeg" alt="Sai Nandhan &amp; Sowmya" class="photo main" />
+      <img src="images/couple-2.jpeg" alt="Sai Nandhan &amp; Sowmya" class="photo side left" />
+      <img src="images/couple-3.jpeg" alt="Sai Nandhan &amp; Sowmya" class="photo side right" />
+    </div>
+
     <header class="header">
-      <div class="monogram">R &amp; S</div>
-      <h1 class="names">Rohit &amp; Harika</h1>
-      <p class="date">Saturday, December 12, 2026</p>
-      <p class="venue">The Grand Garden Estate &bull; Mumbai, India</p>
+      <p class="invite-from">The Jinka Family cordially invites you,</p>
+      <p class="invite-with">along with your family and friends, to celebrate the joyous wedding of</p>
+      <div class="monogram">S &amp; S</div>
+      <h1 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h1>
     </header>
 
-    <p class="intro">
-      Together with our families, we invite you to celebrate our wedding.<br>
-      Please let us know if you'll be able to join us.
-    </p>
-
-    <form id="rsvp-form" class="rsvp-form" novalidate>
-      <div class="form-group">
-        <label for="name">Your Name <span class="required">*</span></label>
-        <input type="text" id="name" name="name" required placeholder="e.g. Rohit Bale" />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com" />
-      </div>
-
-      <div class="form-group">
-        <label class="attending-label">Will you be attending? <span class="required">*</span></label>
-        <div class="attending-options" role="radiogroup" aria-label="Attendance">
-          <label class="option">
-            <input type="radio" name="attending" value="Yes" required />
-            <span class="option-mark"></span>
-            <span>Yes, we'll be there!</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="attending" value="No" />
-            <span class="option-mark"></span>
-            <span>Sorry, we can't make it.</span>
-          </label>
+    <section class="events">
+      <div class="event-day">
+        <h2 class="day-title">Day 1 – Reception &amp; Orchestra</h2>
+        <div class="event-details">
+          <div class="detail-item">
+            <span class="detail-icon">📅</span>
+            <span>Thursday, 29th October 2026</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">🕖</span>
+            <span>Reception: 7:00 PM onwards</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">🍽️</span>
+            <span>Dinner: 7:30 PM</span>
+          </div>
         </div>
       </div>
 
-      <div id="guests-section" class="form-group hidden">
-        <label for="guests">Number of guests (including you)</label>
-        <select id="guests" name="guests">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+      <div class="event-day">
+        <h2 class="day-title">Day 2 – Wedding Ceremony</h2>
+        <div class="event-details">
+          <div class="detail-item">
+            <span class="detail-icon">📅</span>
+            <span>Friday, 30th October 2026</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">🌸</span>
+            <span>Upanayanam &amp; Kasi Yatra: 6:00 AM</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">💍</span>
+            <span>Wedding Muhurtham: 7:49 AM</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label for="dietary">Dietary requirements or allergies</label>
-        <textarea id="dietary" name="dietary" rows="3" placeholder="e.g. vegetarian, nut allergy"></textarea>
-      </div>
+    <section class="venue">
+      <h2 class="venue-title">Venue</h2>
+      <p class="venue-name">Sri Vasavi Cotton Merchants Kalyana Mandapam</p>
+      <p class="venue-address">Saraswathi Vidya Mandiram Road,<br>Y.M.R. Colony, Proddatur.</p>
+      <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-link" target="_blank" rel="noopener">
+        📍 View on Google Maps
+      </a>
+    </section>
 
-      <div class="form-group">
-        <label for="message">Message for the couple</label>
-        <textarea id="message" name="message" rows="4" placeholder="Congratulations! We can't wait to celebrate with you."></textarea>
-      </div>
+    <section class="message">
+      <p class="message-text">
+        Your gracious presence and blessings will make our celebrations truly memorable.<br>
+        We warmly welcome you to join us in celebrating this beautiful beginning.
+      </p>
+    </section>
 
-      <button type="submit" class="submit-btn" id="submit-btn">Send RSVP</button>
-    </form>
-
-    <div id="thank-you" class="thank-you hidden">
-      <div class="checkmark">&#10004;</div>
-      <h2>Thank you!</h2>
-      <p>We've received your response and can't wait to celebrate with you.</p>
-      <button onclick="location.reload()" class="reset-btn">Send another response</button>
-    </div>
+    <footer class="card-footer">
+      <p class="regards">With love and warm regards,</p>
+      <p class="hosts">Sri J. Ravindra &amp; Smt. Hymavathi &amp; Sai Nandhan Jinka</p>
+    </footer>
   </div>
 
-  <footer class="footer">
-    <p>Questions? Email us at <a href="mailto:rohitbale1998@gmail.com">rohitbale1998@gmail.com</a></p>
-    <p class="small">Made with &#10084;&#65039; for Rohit &amp; Harika's wedding</p>
+  <footer class="site-footer">
+    <p>Jinka Family Wedding &bull; October 2026 &bull; Proddatur</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
