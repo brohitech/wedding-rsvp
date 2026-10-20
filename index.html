@@ -137,6 +137,19 @@
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     }, { passive: true });
+
+    // Nav bar: dark over the hero, light once scrolled past it
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+    const onScroll = () => {
+      if (window.scrollY > hero.offsetHeight - 80) {
+        nav.classList.add('nav-light');
+      } else {
+        nav.classList.remove('nav-light');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   </script>
 </body>
 </html>
