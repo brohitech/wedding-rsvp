@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ========== NAVIGATION (from reference template) ========== -->
+  <!-- ========== NAVIGATION (reference template) ========== -->
   <nav class="nav">
     <div class="nav-content">
       <button class="nav-menu" aria-label="Menu">☰</button>
@@ -21,23 +21,21 @@
     </div>
   </nav>
 
-  <!-- ========== HERO — IMAGE AS BACKGROUND (reference template) ========== -->
+  <!-- ========== HERO — PHOTO AS BACKGROUND, PRISTINE (no filter/overlay) ========== -->
   <section class="hero" style="--bg: url('images/featured.webp')">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">The Jinka Family cordially invites you</div>
-      <div class="hero-divider">•</div>
-      <p class="hero-label">The</p>
-      <h1 class="hero-script">Wedding</h1>
-      <p class="hero-label">of</p>
-      <h2 class="hero-names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
-    </div>
+    <div class="hero-fade"></div>
   </section>
 
-  <!-- ========== CONTENT — CLEAN WHITE SECTION (reference template) ========== -->
+  <!-- ========== MAIN CONTENT — IVORY EDITORIAL BLOCK (reference template) ========== -->
   <main class="content">
     <div class="container">
-      <!-- Date & Venue -->
+
+      <p class="wedding-label">The</p>
+      <h1 class="wedding-script">Wedding</h1>
+      <p class="wedding-label">of</p>
+
+      <h2 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
+
       <p class="date-line">29th &amp; 30th October 2026 &bull; Proddatur</p>
 
       <!-- Countdown -->
@@ -51,49 +49,47 @@
         </div>
       </div>
 
-      <!-- Date repeat -->
+      <!-- Divider -->
+      <div class="rule"></div>
+
       <p class="date-repeat">29th &amp; 30th October 2026</p>
-      <div class="divider">•</div>
+      <div class="rule short"></div>
       <p class="venue-line">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</p>
 
       <!-- Map Button -->
       <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-btn" target="_blank" rel="noopener">
         View on Google Maps
       </a>
+    </div>
 
-      <!-- ========== FEATURED — IMAGE AS BACKGROUND ========== -->
-      <section class="featured-section" style="--bg: url('images/hero.webp')">
-        <div class="featured-overlay"></div>
-        <div class="featured-content">
-          <p class="featured-eyebrow">Moments of love</p>
-          <h3 class="featured-heading">Together always</h3>
-        </div>
-      </section>
+    <!-- ========== FEATURED PHOTO BAND — PRISTINE IMAGE ========== -->
+    <section class="photo-band band-bride" style="--bg: url('images/hero.webp')"></section>
+    <p class="band-caption">Moments of love</p>
 
-      <!-- ========== TIMELINE — IMAGE AS BACKGROUND ========== -->
-      <section class="timeline-section" style="--bg: url('images/details.webp')">
-        <div class="timeline-overlay"></div>
-        <div class="container-inner">
-          <h3 class="section-title">Celebration Timeline</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-marker">1</div>
-              <div class="timeline-content">
-                <h4>Reception & Orchestra</h4>
-                <p>Thursday, 29th October 2026<br>7:00 PM onwards<br>Dinner: 7:30 PM</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-marker">2</div>
-              <div class="timeline-content">
-                <h4>Wedding Ceremony</h4>
-                <p>Friday, 30th October 2026<br>Upanayanam &amp; Kasi Yatra: 6:00 AM<br>Wedding Muhurtham: 7:49 AM</p>
-              </div>
-            </div>
+    <!-- ========== TIMELINE ========== -->
+    <section class="timeline-section">
+      <h3 class="section-title">Celebration Timeline</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h4>Reception &amp; Orchestra</h4>
+            <p>Thursday, 29th October 2026<br>7:00 PM onwards<br>Dinner: 7:30 PM</p>
           </div>
         </div>
-      </section>
-    </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h4>Wedding Ceremony</h4>
+            <p>Friday, 30th October 2026<br>Upanayanam &amp; Kasi Yatra: 6:00 AM<br>Wedding Muhurtham: 7:49 AM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECOND PHOTO BAND — PRISTINE IMAGE ========== -->
+    <section class="photo-band band-groom" style="--bg: url('images/details.webp')"></section>
+    <p class="band-caption">Together always</p>
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -137,19 +133,6 @@
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     }, { passive: true });
-
-    // Nav bar: dark over the hero, light once scrolled past it
-    const nav = document.querySelector('.nav');
-    const hero = document.querySelector('.hero');
-    const onScroll = () => {
-      if (window.scrollY > hero.offsetHeight - 80) {
-        nav.classList.add('nav-light');
-      } else {
-        nav.classList.remove('nav-light');
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
   </script>
 </body>
 </html>

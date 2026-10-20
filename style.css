@@ -19,24 +19,14 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ========== Navigation (reference template) ========== */
+/* ========== Navigation (reference template — light bar above the photo) ========== */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 14px 16px;
+  padding: 16px 20px;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.35s ease, border-color 0.35s ease;
-}
-
-/* Switch to light bar once past the dark hero */
-.nav.nav-light {
-  background: rgba(253, 251, 247, 0.92);
+  background: #fdfbf7;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -51,168 +41,114 @@ body {
 .nav-menu {
   background: none;
   border: none;
-  color: #fff;
-  font-size: 22px;
+  color: #1a1a1a;
+  font-size: 24px;
   cursor: pointer;
   line-height: 1;
-  transition: color 0.35s ease;
-}
-
-.nav.nav-light .nav-menu {
-  color: #1a1a1a;
 }
 
 .nav-monogram {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
-  letter-spacing: 4px;
-  color: #d4af37;
+  letter-spacing: 5px;
+  color: #1a1a1a;
 }
 
-/* ========== HERO — IMAGE AS BACKGROUND (reference template) ========== */
+/* ========== Hero — pristine photo, no filter, no dark scrim ========== */
 .hero {
   position: relative;
   width: 100%;
-  height: 56vh;
+  height: 62vh;
   min-height: 420px;
   overflow: hidden;
-  isolation: isolate;
-  background-color: #000;
-}
-
-/* Image layer — darkened + richer, on a true black canvas */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  background-color: #fdfbf7;
   background-image: var(--bg);
   background-size: cover;
   background-position: center 38%; /* couple faces sit ~40% down — keep them framed */
   background-repeat: no-repeat;
-  filter: contrast(1.28) saturate(1.3) brightness(0.8);
 }
 
-.hero-overlay {
+/* Soft fade into the ivory block below — blends the edge, not the photo tone */
+.hero-fade {
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0.34) 50%,
-      rgba(0, 0, 0, 0.9) 100%
-    );
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(253, 251, 247, 0) 0%, rgba(253, 251, 247, 0.95) 100%);
+  pointer-events: none;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hero-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #eaddc8;
-  margin-bottom: 4px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-}
-
-.hero-divider {
-  font-size: 14px;
-  color: #d4af37;
-  font-weight: 700;
-  align-self: center;
-  width: fit-content;
-  margin: 0 auto 4px;
-}
-
-.hero-label {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  margin: 6px 0 2px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-}
-
-.hero-script {
-  font-family: 'Great Vibes', cursive;
-  font-size: 72px;
-  color: #fff;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0;
-  font-style: normal;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
-}
-
-.hero-names {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  margin: 8px 0;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
-}
-
-.hero-names .heart {
-  color: #d4af37;
-  font-size: 34px;
-  margin: 0 6px;
-}
-
-/* ========== CONTENT — CLEAN WHITE SECTION ========== */
+/* ========== Main content — ivory editorial block ========== */
 .content {
   position: relative;
-  z-index: 10;
-  padding: 0;
-  margin-top: -20px; /* slight overlap with hero for premium feel */
+  z-index: 5;
+  padding: 0 0 20px;
 }
 
 .container {
   max-width: 440px;
   margin: 0 auto;
-  padding: 32px 20px 60px;
+  padding: 44px 20px 30px;
   text-align: center;
 }
 
-/* Date & Venue */
+/* The Wedding of */
+.wedding-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 18px 0 4px;
+  letter-spacing: 3px;
+}
+
+.wedding-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 78px;
+  color: #1a1a1a;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  font-style: normal;
+}
+
+/* Names */
+.names {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 14px 0 0;
+}
+
+.names .heart {
+  color: #b56576;
+  font-size: 32px;
+  margin: 0 6px;
+}
+
+/* Date & venue */
 .date-line {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #8a4b56;
-  margin: 16px 0 8px;
+  color: #6b6572;
+  margin: 18px 0 6px;
 }
 
 .date-repeat {
   font-family: 'Playfair Display', serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 14px 0 6px;
-  letter-spacing: 1px;
+  margin: 8px 0;
+  letter-spacing: 2px;
 }
 
 .venue-line {
@@ -220,20 +156,26 @@ body {
   font-size: 14px;
   font-style: italic;
   color: #6b6572;
-  margin: 0 0 20px;
-  line-height: 1.6;
+  margin: 8px 0 22px;
+  line-height: 1.7;
 }
 
-.divider {
-  font-size: 14px;
-  color: #d4af37;
-  font-weight: 700;
-  margin: 12px 0;
+/* Rules (reference template dividers) */
+.rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.18);
+  margin: 26px auto;
+}
+
+.rule.short {
+  width: 90px;
+  margin: 18px auto;
 }
 
 /* Countdown */
 .countdown {
-  margin: 18px 0;
+  margin: 22px 0 6px;
 }
 
 .cd-label {
@@ -241,7 +183,7 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #d4af37;
+  color: #b56576;
   margin-bottom: 12px;
   display: block;
 }
@@ -249,7 +191,7 @@ body {
 .cd-wrapper {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -291,7 +233,7 @@ body {
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .map-btn:hover {
@@ -304,147 +246,60 @@ body {
   transform: scale(0.98);
 }
 
-/* ========== FEATURED — IMAGE AS BACKGROUND ========== */
-.featured-section {
+/* ========== Photo bands — pristine images, no filter ========== */
+.photo-band {
   position: relative;
-  margin: 30px 0 60px;
-  width: 100%;
-  height: 400px;
-  isolation: isolate;
-  background-color: #000;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-}
-
-/* Image layer — darkened + richer, on a true black canvas */
-.featured-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: var(--bg);
-  background-size: cover;
-  background-position: center 10%; /* bride's face sits ~14% down — anchor high so it never crops */
-  background-repeat: no-repeat;
-  filter: contrast(1.28) saturate(1.3) brightness(0.78);
-}
-
-.featured-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
-}
-
-.featured-content {
-  position: relative;
-  z-index: 5;
   width: 100%;
   max-width: 440px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  gap: 8px;
-}
-
-.featured-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #eaddc8;
-}
-
-.featured-heading {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: #fff;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0;
-  font-style: normal;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
-}
-
-.featured-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #eaddc8;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-}
-
-/* ========== TIMELINE — IMAGE AS BACKGROUND (dark card) ========== */
-.timeline-section {
-  position: relative;
-  width: 100%;
-  isolation: isolate;
-  background-color: #000;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 40px 0 50px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
-}
-
-/* Image layer — darkened + richer, on a true black canvas */
-.timeline-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  margin: 34px auto 0;
+  height: 380px;
+  background-color: #f0ece4;
   background-image: var(--bg);
   background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+/* Face-aware positions for each band */
+.band-bride {
+  background-position: center 10%; /* bride's face sits ~14% down */
+}
+
+.band-groom {
   background-position: center 42%; /* groom's face sits ~43% down */
-  background-repeat: no-repeat;
-  filter: contrast(1.3) saturate(1.32) brightness(0.72);
 }
 
-.timeline-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45) 0%,
-    rgba(0, 0, 0, 0.72) 100%
-  );
-}
-
-.container-inner {
+.band-caption {
   max-width: 440px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  position: relative;
-  z-index: 5;
+  margin: 14px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #8a4b56;
+}
+
+/* ========== Timeline ========== */
+.timeline-section {
+  max-width: 440px;
+  margin: 40px auto 0;
+  padding: 0 20px;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
   font-weight: 700;
-  color: #fdfbf7;
-  margin-bottom: 24px;
+  color: #1a1a1a;
+  margin-bottom: 22px;
   letter-spacing: 1px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .timeline-item {
@@ -452,6 +307,10 @@ body {
   align-items: flex-start;
   gap: 14px;
   text-align: left;
+  background: rgba(138, 75, 86, 0.05);
+  border-left: 4px solid #8a4b56;
+  border-radius: 12px;
+  padding: 16px;
 }
 
 .timeline-marker {
@@ -468,39 +327,37 @@ body {
   justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .timeline-content h4 {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   font-weight: 700;
-  color: #fdfbf7;
+  color: #1a1a1a;
   margin-bottom: 6px;
   letter-spacing: 0.5px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .timeline-content p {
   font-size: 14px;
-  color: #eaddc8;
+  color: #6b6572;
   line-height: 1.7;
   margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* ========== Footer ========== */
 .footer {
-  padding: 50px 20px 70px;
-  background: #000;
+  margin-top: 50px;
+  padding: 40px 20px 70px;
+  background: #fdfbf7;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .footer-quote {
   font-family: 'Great Vibes', cursive;
   font-size: 24px;
-  color: #eaddc8;
+  color: #6b6572;
   margin-bottom: 16px;
   font-style: italic;
 }
@@ -508,14 +365,14 @@ body {
 .footer-signoff {
   font-family: 'Playfair Display', serif;
   font-size: 15px;
-  color: #fdfbf7;
+  color: #1a1a1a;
   margin-bottom: 6px;
   letter-spacing: 1px;
 }
 
 .footer-copy {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -530,17 +387,15 @@ body {
   .container {
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
-    padding-bottom: max(60px, env(safe-area-inset-bottom));
-  }
-  .container-inner {
-    padding-left: max(20px, env(safe-area-inset-left));
-    padding-right: max(20px, env(safe-area-inset-right));
-    padding-bottom: max(60px, env(safe-area-inset-bottom));
   }
   .footer {
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
     padding-bottom: max(70px, env(safe-area-inset-bottom));
+  }
+  .photo-band {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
@@ -551,22 +406,16 @@ html {
 /* ========== Desktop ========== */
 @media (min-width: 600px) {
   .hero {
-    height: 50vh;
-    min-height: 400px;
+    height: 58vh;
+    min-height: 460px;
   }
-  .hero-script {
-    font-size: 84px;
+  .wedding-script {
+    font-size: 92px;
   }
-  .hero-names {
+  .names {
     font-size: 48px;
   }
-  .featured-section {
-    height: 480px;
-  }
-  .featured-heading {
-    font-size: 56px;
-  }
-  .timeline-section {
-    gap: 40px;
+  .photo-band {
+    height: 460px;
   }
 }
