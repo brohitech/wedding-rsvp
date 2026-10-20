@@ -16,13 +16,11 @@
     <div class="nav-content">
       <button class="nav-menu" aria-label="Menu">☰</button>
       <div class="nav-monogram">S &amp; S</div>
-      <a href="#rsvp" class="nav-rsvp">RSVP</a>
     </div>
   </nav>
 
-  <!-- ========== HERO SECTION (Image Background) ========== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg" style="background-image: url('images/IMG_4050.JPG.jpeg')"></div>
+  <!-- ========== HERO SECTION — IMG_4165 (start image) ========== -->
+  <section class="hero" id="hero" style="background-image: url('images/IMG_4165.JPG.jpeg')">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">The Jinka Family cordially invites you</div>
@@ -49,8 +47,9 @@
     </a>
   </section>
 
-  <!-- ========== DETAILS / EVENTS ========== -->
-  <section id="details" class="details">
+  <!-- ========== DETAILS / EVENTS — IMG_4174 as background ========== -->
+  <section id="details" class="details" style="background-image: url('images/IMG_4174.JPG.jpeg')">
+    <div class="details-overlay"></div>
     <div class="container">
       <div class="section-header reveal">
         <h2 class="section-title">Celebration Timeline</h2>
@@ -68,7 +67,7 @@
             </div>
             <div class="event-meta">
               <span class="event-icon">🕖</span>
-              <span>7:00 PM onwards</span>
+              <span>Reception: 7:00 PM onwards</span>
             </div>
             <div class="event-meta">
               <span class="event-icon">🍽️</span>
@@ -108,72 +107,17 @@
     </div>
   </section>
 
-  <!-- ========== GALLERY (Images in Background / Featured) ========== -->
-  <section class="gallery" id="gallery">
-    <div class="gallery-grid">
-      <div class="gallery-item reveal">
-        <div class="gallery-frame" style="background-image: url('images/IMG_4165.JPG.jpeg')"></div>
-        <div class="gallery-caption">Moments of love</div>
-      </div>
-      <div class="gallery-item reveal delay-200">
-        <div class="gallery-frame" style="background-image: url('images/IMG_4174.JPG.jpeg')"></div>
-        <div class="gallery-caption">Forever begins</div>
-      </div>
-      <div class="gallery-item reveal delay-400">
-        <div class="gallery-frame" style="background-image: url('images/IMG_4050.JPG.jpeg')"></div>
-        <div class="gallery-caption">Together always</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== RSVP ========== -->
-  <section id="rsvp" class="rsvp">
+  <!-- ========== FEATURED / MESSAGE — IMG_4050 as background ========== -->
+  <section id="message" class="featured" style="background-image: url('images/IMG_4050.JPG.jpeg')">
+    <div class="featured-overlay"></div>
     <div class="container">
-      <div class="section-header reveal text-center">
-        <h2 class="section-title">RSVP</h2>
-        <p class="section-sub">Kindly respond by 15th October 2026</p>
-      </div>
-
-      <form class="rsvp-form reveal" id="rsvp-form">
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input type="text" name="name" placeholder="e.g. Rohan & Priya" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Attendance</label>
-          <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="attending" value="attending" />
-              <span class="radio-check"></span>
-              <span>Attending</span>
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="attending" value="declining" />
-              <span class="radio-check"></span>
-              <span>Respectfully Declining</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Dietary Restrictions</label>
-          <textarea name="dietary" rows="3" placeholder="Any allergies or preferences..."></textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Song Request</label>
-          <input type="text" name="song" placeholder="A song you'd love to hear..." />
-        </div>
-
-        <button type="submit" class="rsvp-btn">Send Response</button>
-      </form>
-
-      <div class="rsvp-success hidden" id="rsvp-success">
-        <div class="success-check">✓</div>
-        <h3>Thank you!</h3>
-        <p>We've received your response and can't wait to celebrate with you.</p>
-        <button type="button" class="rsvp-btn outline" onclick="resetRSVP()">Send another response</button>
+      <div class="featured-content reveal">
+        <div class="featured-eyebrow">A beautiful beginning</div>
+        <h2 class="featured-heading">Your gracious presence and blessings</h2>
+        <p class="featured-text">
+          will make our celebrations truly memorable.<br>
+          We warmly welcome you to join us in celebrating this beautiful beginning.
+        </p>
       </div>
     </div>
   </section>
@@ -229,20 +173,6 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // RSVP form
-    const form = document.getElementById('rsvp-form');
-    const success = document.getElementById('rsvp-success');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      form.classList.add('hidden');
-      success.classList.remove('hidden');
-    });
-    window.resetRSVP = () => {
-      form.classList.remove('hidden');
-      success.classList.add('hidden');
-      form.reset();
-    };
   </script>
 </body>
 </html>
