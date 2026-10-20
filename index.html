@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#fdfbf7" />
   <title>Sai Nandhan & Sowmya | Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,108 +21,79 @@
     </div>
   </nav>
 
-  <!-- ========== HERO SECTION — IMG_4165 (start image) ========== -->
-  <section class="hero" id="hero" style="background-image: url('images/IMG_4165.JPG.jpeg')">
+  <!-- ========== HERO — IMAGE AT TOP (REFERENCE TEMPLATE) ========== -->
+  <section class="hero">
+    <img src="images/hero.webp" alt="Sai Nandhan & Sowmya" class="hero-img" loading="eager" decoding="async" />
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">The Jinka Family cordially invites you</div>
-      <div class="hero-divider">•</div>
-      <h1 class="hero-script">The Wedding of</h1>
-      <h2 class="hero-names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
-      <div class="hero-divider">•</div>
-      <div class="hero-date">29th &amp; 30th October 2026</div>
-      <div class="hero-venue">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</div>
-      <div class="hero-countdown">
+  </section>
+
+  <!-- ========== CONTENT SECTION — WHITE BACKGROUND LIKE REFERENCE ========== -->
+  <main class="content">
+    <div class="container">
+      <!-- Eyebrow -->
+      <p class="eyebrow">The Jinka Family cordially invites you</p>
+      <div class="divider">•</div>
+
+      <!-- "The Wedding of" -->
+      <p class="wedding-label">The</p>
+      <h1 class="wedding-script">Wedding</h1>
+      <p class="wedding-label">of</p>
+
+      <!-- Names -->
+      <h2 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
+
+      <!-- Date & Venue -->
+      <p class="date-line">29th &amp; 30th October 2026 &bull; Proddatur</p>
+
+      <!-- Countdown -->
+      <div class="countdown">
         <span class="cd-label">Countdown</span>
         <div class="cd-wrapper">
-          <span id="cd-days" class="cd-value">00</span><span class="cd-unit">D</span>
-          <span id="cd-hours" class="cd-value">00</span><span class="cd-unit">H</span>
-          <span id="cd-minutes" class="cd-value">00</span><span class="cd-unit">M</span>
-          <span id="cd-seconds" class="cd-value">00</span><span class="cd-unit">S</span>
+          <span><span id="cd-days" class="cd-value">00</span><span class="cd-unit">Days</span></span>
+          <span><span id="cd-hours" class="cd-value">00</span><span class="cd-unit">Hours</span></span>
+          <span><span id="cd-minutes" class="cd-value">00</span><span class="cd-unit">Mins</span></span>
+          <span><span id="cd-seconds" class="cd-value">00</span><span class="cd-unit">Secs</span></span>
         </div>
       </div>
-      <a href="#details" class="hero-cta">View Details →</a>
-    </div>
-    <a href="#details" class="hero-scroll">
-      <span>Scroll</span>
-      <svg class="scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-    </a>
-  </section>
 
-  <!-- ========== DETAILS / EVENTS — IMG_4174 as background ========== -->
-  <section id="details" class="details" style="background-image: url('images/IMG_4174.JPG.jpeg')">
-    <div class="details-overlay"></div>
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Celebration Timeline</h2>
-        <p class="section-sub">Join us for a weekend of love and joy</p>
-      </div>
+      <!-- Date -->
+      <p class="date-repeat">29th &amp; 30th October 2026</p>
+      <div class="divider">•</div>
+      <p class="venue-line">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</p>
 
-      <div class="timeline">
-        <div class="timeline-item reveal delay-200">
-          <div class="timeline-marker">1</div>
-          <div class="timeline-content">
-            <h3 class="event-title">Reception & Orchestra</h3>
-            <div class="event-meta">
-              <span class="event-icon">📅</span>
-              <span>Thursday, 29th October 2026</span>
+      <!-- Map Button -->
+      <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-btn" target="_blank" rel="noopener">
+        View on Google Maps
+      </a>
+
+      <!-- Featured Image Section -->
+      <section class="featured-section">
+        <img src="images/featured.webp" alt="Couple moment" class="featured-img" loading="lazy" decoding="async" />
+        <div class="featured-caption">Moments of love</div>
+      </section>
+
+      <!-- Timeline -->
+      <section class="timeline-section">
+        <h3 class="section-title">Celebration Timeline</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">1</div>
+            <div class="timeline-content">
+              <h4>Reception & Orchestra</h4>
+              <p>Thursday, 29th October 2026<br>7:00 PM onwards<br>Dinner: 7:30 PM</p>
             </div>
-            <div class="event-meta">
-              <span class="event-icon">🕖</span>
-              <span>Reception: 7:00 PM onwards</span>
-            </div>
-            <div class="event-meta">
-              <span class="event-icon">🍽️</span>
-              <span>Dinner: 7:30 PM</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">2</div>
+            <div class="timeline-content">
+              <h4>Wedding Ceremony</h4>
+              <p>Friday, 30th October 2026<br>Upanayanam &amp; Kasi Yatra: 6:00 AM<br>Wedding Muhurtham: 7:49 AM</p>
             </div>
           </div>
         </div>
-
-        <div class="timeline-item reveal delay-400">
-          <div class="timeline-marker">2</div>
-          <div class="timeline-content">
-            <h3 class="event-title">Wedding Ceremony</h3>
-            <div class="event-meta">
-              <span class="event-icon">📅</span>
-              <span>Friday, 30th October 2026</span>
-            </div>
-            <div class="event-meta">
-              <span class="event-icon">🌸</span>
-              <span>Upanayanam & Kasi Yatra: 6:00 AM</span>
-            </div>
-            <div class="event-meta">
-              <span class="event-icon">💍</span>
-              <span>Wedding Muhurtham: 7:49 AM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="venue-card reveal delay-600">
-        <h3 class="venue-title">Venue</h3>
-        <p class="venue-name">Sri Vasavi Cotton Merchants Kalyana Mandapam</p>
-        <p class="venue-address">Saraswathi Vidya Mandiram Road,<br>Y.M.R. Colony, Proddatur.</p>
-        <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-btn" target="_blank" rel="noopener">
-          View on Google Maps
-        </a>
-      </div>
+      </section>
     </div>
-  </section>
-
-  <!-- ========== FEATURED / MESSAGE — IMG_4050 as background ========== -->
-  <section id="message" class="featured" style="background-image: url('images/IMG_4050.JPG.jpeg')">
-    <div class="featured-overlay"></div>
-    <div class="container">
-      <div class="featured-content reveal">
-        <div class="featured-eyebrow">A beautiful beginning</div>
-        <h2 class="featured-heading">Your gracious presence and blessings</h2>
-        <p class="featured-text">
-          will make our celebrations truly memorable.<br>
-          We warmly welcome you to join us in celebrating this beautiful beginning.
-        </p>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
@@ -155,24 +128,14 @@
       }
     }, 1000);
 
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
-    });
-
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, { passive: true });
   </script>
 </body>
 </html>
