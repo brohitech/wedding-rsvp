@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- ========== NAVIGATION (from reference template) ========== -->
   <nav class="nav">
     <div class="nav-content">
       <button class="nav-menu" aria-label="Menu">☰</button>
@@ -21,27 +21,22 @@
     </div>
   </nav>
 
-  <!-- ========== HERO — IMAGE AT TOP (REFERENCE TEMPLATE) ========== -->
-  <section class="hero">
-    <img src="images/featured.webp" alt="Sai Nandhan & Sowmya" class="hero-img" loading="eager" decoding="async" />
+  <!-- ========== HERO — IMAGE AS BACKGROUND (reference template) ========== -->
+  <section class="hero" style="background-image: url('images/featured.webp')">
     <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">The Jinka Family cordially invites you</div>
+      <div class="hero-divider">•</div>
+      <p class="hero-label">The</p>
+      <h1 class="hero-script">Wedding</h1>
+      <p class="hero-label">of</p>
+      <h2 class="hero-names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
+    </div>
   </section>
 
-  <!-- ========== CONTENT SECTION — WHITE BACKGROUND LIKE REFERENCE ========== -->
+  <!-- ========== CONTENT — CLEAN WHITE SECTION (reference template) ========== -->
   <main class="content">
     <div class="container">
-      <!-- Eyebrow -->
-      <p class="eyebrow">The Jinka Family cordially invites you</p>
-      <div class="divider">•</div>
-
-      <!-- "The Wedding of" -->
-      <p class="wedding-label">The</p>
-      <h1 class="wedding-script">Wedding</h1>
-      <p class="wedding-label">of</p>
-
-      <!-- Names -->
-      <h2 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
-
       <!-- Date & Venue -->
       <p class="date-line">29th &amp; 30th October 2026 &bull; Proddatur</p>
 
@@ -56,7 +51,7 @@
         </div>
       </div>
 
-      <!-- Date -->
+      <!-- Date repeat -->
       <p class="date-repeat">29th &amp; 30th October 2026</p>
       <div class="divider">•</div>
       <p class="venue-line">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</p>
@@ -66,29 +61,34 @@
         View on Google Maps
       </a>
 
-      <!-- Featured Image Section -->
-      <section class="featured-section">
-        <img src="images/hero.webp" alt="Couple moment" class="featured-img" loading="lazy" decoding="async" />
-        <div class="featured-caption">Moments of love</div>
+      <!-- ========== FEATURED — IMAGE AS BACKGROUND ========== -->
+      <section class="featured-section" style="background-image: url('images/hero.webp')">
+        <div class="featured-overlay"></div>
+        <div class="featured-content">
+          <p class="featured-eyebrow">Moments of love</p>
+          <h3 class="featured-heading">Together always</h3>
+        </div>
       </section>
 
-      <!-- Timeline — IMG_4174 as background accent -->
+      <!-- ========== TIMELINE — IMAGE AS BACKGROUND ========== -->
       <section class="timeline-section" style="background-image: url('images/details.webp')">
         <div class="timeline-overlay"></div>
-        <h3 class="section-title">Celebration Timeline</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content">
-              <h4>Reception & Orchestra</h4>
-              <p>Thursday, 29th October 2026<br>7:00 PM onwards<br>Dinner: 7:30 PM</p>
+        <div class="container-inner">
+          <h3 class="section-title">Celebration Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h4>Reception & Orchestra</h4>
+                <p>Thursday, 29th October 2026<br>7:00 PM onwards<br>Dinner: 7:30 PM</p>
+              </div>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content">
-              <h4>Wedding Ceremony</h4>
-              <p>Friday, 30th October 2026<br>Upanayanam &amp; Kasi Yatra: 6:00 AM<br>Wedding Muhurtham: 7:49 AM</p>
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h4>Wedding Ceremony</h4>
+                <p>Friday, 30th October 2026<br>Upanayanam &amp; Kasi Yatra: 6:00 AM<br>Wedding Muhurtham: 7:49 AM</p>
+              </div>
             </div>
           </div>
         </div>
