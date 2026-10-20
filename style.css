@@ -189,16 +189,25 @@ body {
   font-size: 42px;
   font-weight: 400;
   color: var(--ivory);
-  letter-spacing: 2px;
+  letter-spacing: normal;
   line-height: 1.2;
   margin: 16px 0 0;
 }
 
 .ltr {
   display: inline-block;
+  /* Reset inherited letter-spacing (which would double the gap
+     alongside the inline-block box spacing) and restore tracking
+     with margin so the name reads as one word, not split letters */
+  letter-spacing: 0;
+  margin-right: 0.055em;
   opacity: 0;
   transform: translateY(0.4em);
   animation: ltrIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.name-part .ltr:last-child {
+  margin-right: 0;
 }
 
 @keyframes ltrIn {
@@ -211,13 +220,14 @@ body {
   50% { transform: translateY(-8px); }
 }
 
-/* Shimmer sweep across highlighted text */
+/* Shimmer sweep across highlighted text — gold to rose */
 .shimmer {
   background: linear-gradient(
     100deg,
-    var(--ivory) 35%,
-    var(--gold) 50%,
-    var(--ivory) 65%
+    var(--ivory) 28%,
+    var(--gold) 46%,
+    var(--rose) 58%,
+    var(--ivory) 76%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
