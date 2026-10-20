@@ -186,12 +186,14 @@ body {
 /* Names — staggered letter reveal */
 .names {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: clamp(25px, 7.4vw, 38px);
   font-weight: 400;
   color: var(--ivory);
   letter-spacing: normal;
-  line-height: 1.2;
+  line-height: 1.25;
   margin: 16px 0 0;
+  /* Keep the full name on a single line */
+  white-space: nowrap;
 }
 
 .ltr {
@@ -244,9 +246,36 @@ body {
 
 .names .heart {
   color: var(--rose);
-  font-size: 28px;
-  margin: 0 6px;
+  font-size: 0.72em;
+  margin: 0 0.12em;
   vertical-align: middle;
+}
+
+/* Invitation message */
+.invite-message {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--ivory);
+  margin: 26px auto 0;
+  max-width: 360px;
+  opacity: 0.92;
+}
+
+.heart-inline {
+  color: var(--rose);
+  font-style: normal;
+}
+
+.invite-closing {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  margin: 14px auto 0;
 }
 
 /* Date & venue */
@@ -481,9 +510,9 @@ body {
 }
 
 .footer-copy {
-  font-size: 9px;
-  color: rgba(245, 242, 238, 0.32);
-  letter-spacing: 2px;
+  font-size: 8px;
+  color: rgba(245, 242, 238, 0.3);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
@@ -564,8 +593,5 @@ html {
   }
   .wedding-script {
     font-size: 104px;
-  }
-  .names {
-    font-size: 50px;
   }
 }
