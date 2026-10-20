@@ -288,9 +288,37 @@ body {
   margin-top: 12px;
 }
 
-/* ========== Timeline Section ========== */
+/* ========== Timeline Section — IMG_4174 Background ========== */
 .timeline-section {
+  position: relative;
   margin: 40px 0 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.timeline-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(253, 251, 247, 0.85) 0%,
+    rgba(253, 251, 247, 0.95) 100%
+  );
+}
+
+.timeline-section .container,
+.timeline-section .section-title,
+.timeline-section .timeline,
+.timeline-section .timeline-item,
+.timeline-section .timeline-content {
+  position: relative;
+  z-index: 5;
+}
+
+.timeline-section .section-title {
+  margin-bottom: 24px;
 }
 
 .section-title {
