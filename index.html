@@ -8,12 +8,12 @@
   <title>Sai Nandhan & Sowmya | Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== NAVIGATION (dark bar, reference template) ========== -->
+  <!-- ========== NAVIGATION ========== -->
   <nav class="nav">
     <div class="nav-content">
       <button class="nav-menu" aria-label="Menu">☰</button>
@@ -21,25 +21,24 @@
     </div>
   </nav>
 
-  <!-- ========== HERO — PRISTINE PHOTO, NO FILTER / NO SCRIM ========== -->
+  <!-- ========== HERO — PRISTINE PHOTO ========== -->
   <section class="hero" style="--bg: url('images/featured.webp')">
     <div class="hero-fade"></div>
   </section>
 
-  <!-- ========== MAIN CONTENT — DARK EDITORIAL BLOCK ========== -->
-  <main class="content">
+  <!-- ========== INVITATION — IMAGE BACKGROUND ========== -->
+  <section class="invitation" style="--bg: url('images/hero.webp')">
+    <div class="scrim"></div>
     <div class="container">
-
       <p class="wedding-label">The</p>
       <h1 class="wedding-script">Wedding</h1>
       <p class="wedding-label">of</p>
 
-      <h2 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
+      <h2 class="names">Sai Nandhan <span class="heart">&#10084;</span> Sowmya</h2>
 
       <p class="date-line">29th &amp; 30th October 2026 &bull; Proddatur</p>
       <p class="days-to-go"><span id="cd-days">00</span> Days To Go!</p>
 
-      <!-- Countdown -->
       <div class="countdown">
         <div class="cd-wrapper">
           <span><span id="cd-hours" class="cd-value">00</span><span class="cd-unit">Hours</span></span>
@@ -47,26 +46,23 @@
           <span><span id="cd-seconds" class="cd-value">00</span><span class="cd-unit">Secs</span></span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Divider -->
+  <!-- ========== DETAILS — IMAGE BACKGROUND ========== -->
+  <section class="details" style="--bg: url('images/details.webp')">
+    <div class="scrim"></div>
+    <div class="container">
       <div class="rule"></div>
 
       <p class="date-repeat">29th &amp; 30th October 2026</p>
       <div class="rule short"></div>
       <p class="venue-line">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</p>
 
-      <!-- Map Button -->
       <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-btn" target="_blank" rel="noopener">
         View on Google Maps
       </a>
-    </div>
 
-    <!-- ========== PHOTO BAND 1 — PRISTINE IMAGE ========== -->
-    <section class="photo-band band-bride" style="--bg: url('images/hero.webp')"></section>
-    <p class="band-caption">Moments of love</p>
-
-    <!-- ========== TIMELINE ========== -->
-    <section class="timeline-section">
       <h3 class="section-title">Celebration Timeline</h3>
       <div class="timeline">
         <div class="timeline-item">
@@ -84,12 +80,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== PHOTO BAND 2 — PRISTINE IMAGE ========== -->
-    <section class="photo-band band-groom" style="--bg: url('images/details.webp')"></section>
-    <p class="band-caption">Together always</p>
-  </main>
+  <!-- ========== PHOTO BANDS — PRISTINE IMAGES ========== -->
+  <section class="photo-band band-couple" style="--bg: url('images/featured.webp')"></section>
+  <p class="band-caption">Moments of love</p>
+
+  <section class="photo-band band-bride" style="--bg: url('images/hero.webp')"></section>
+  <p class="band-caption">Together always</p>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">

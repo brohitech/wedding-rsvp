@@ -1,4 +1,4 @@
-/* ========== Reset & Base — DARK THEME (reference template) ========== */
+/* ========== Reset & Base ========== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,12 +7,16 @@
 
 :root {
   --bg: #161514;
-  --bg-soft: #1e1c1b;
+  --ink: #161514;
   --ivory: #f5f2ee;
   --muted: #b3aaa2;
   --gold: #d4af37;
-  --maroon: #c98a95;
+  --rose: #c98a95;
   --rule: rgba(245, 242, 238, 0.28);
+
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-script: 'Pinyon Script', 'Great Vibes', cursive;
+  --font-sans: 'Jost', 'Montserrat', sans-serif;
 }
 
 html {
@@ -21,7 +25,7 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Lato', sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--ivory);
   line-height: 1.6;
@@ -29,7 +33,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ========== Navigation — dark bar (reference template) ========== */
+/* ========== Navigation ========== */
 .nav {
   position: sticky;
   top: 0;
@@ -58,14 +62,14 @@ body {
 }
 
 .nav-monogram {
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 5px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 6px;
   color: var(--ivory);
 }
 
-/* ========== Hero — pristine photo, no filter / no scrim ========== */
+/* ========== Hero — pristine photo ========== */
 .hero {
   position: relative;
   width: 100%;
@@ -75,136 +79,164 @@ body {
   background-color: #0f0e0e;
   background-image: var(--bg);
   background-size: cover;
-  background-position: center 38%; /* couple faces sit ~40% down — keep them framed */
+  background-position: center 38%; /* couple faces sit ~40% down */
   background-repeat: no-repeat;
 }
 
-/* Soft fade into the dark block below — blends the edge, not the photo tone */
 .hero-fade {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 90px;
-  background: linear-gradient(180deg, rgba(22, 21, 20, 0) 0%, rgba(22, 21, 20, 0.96) 100%);
+  height: 110px;
+  background: linear-gradient(180deg, rgba(22, 21, 20, 0) 0%, rgba(22, 21, 20, 0.97) 100%);
   pointer-events: none;
 }
 
-/* ========== Main content — dark editorial block ========== */
-.content {
+/* ========== Image-background sections ========== */
+.invitation,
+.details {
   position: relative;
-  z-index: 5;
-  padding: 0 0 20px;
+  isolation: isolate;
+  background-color: #0f0e0e;
+  background-image: var(--bg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.invitation {
+  background-position: center 10%; /* bride's face sits ~14% down */
+}
+
+.details {
+  background-position: center 42%; /* groom's face sits ~43% down */
+}
+
+/* Deep scrim so type stays crisp while the photo shows through */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 14, 14, 0.80) 0%,
+    rgba(15, 14, 14, 0.88) 45%,
+    rgba(15, 14, 14, 0.94) 100%
+  );
+}
+
+/* ========== Layout ========== */
 .container {
   max-width: 440px;
   margin: 0 auto;
-  padding: 44px 20px 30px;
+  padding: 46px 20px 34px;
   text-align: center;
+  position: relative;
+  z-index: 5;
 }
 
 /* The / Wedding / of */
 .wedding-label {
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 500;
   color: var(--ivory);
-  margin: 18px 0 4px;
-  letter-spacing: 6px;
+  margin: 18px 0 2px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
 }
 
 .wedding-script {
-  font-family: 'Great Vibes', cursive;
-  font-size: 78px;
+  font-family: var(--font-script);
+  font-size: 86px;
   color: var(--ivory);
   font-weight: 400;
   line-height: 1;
   margin: 0;
-  font-style: normal;
 }
 
 /* Names */
 .names {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
+  font-family: var(--font-display);
+  font-size: 42px;
   font-weight: 400;
   color: var(--ivory);
-  letter-spacing: 3px;
-  line-height: 1.25;
-  margin: 14px 0 0;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 16px 0 0;
 }
 
 .names .heart {
-  color: var(--maroon);
-  font-size: 30px;
-  margin: 0 4px;
+  color: var(--rose);
+  font-size: 28px;
+  margin: 0 6px;
+  vertical-align: middle;
 }
 
 /* Date & venue */
 .date-line {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 22px 0 6px;
+  margin: 26px 0 6px;
 }
 
 .days-to-go {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--ivory);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .date-repeat {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 4px;
+  font-weight: 300;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--ivory);
   margin: 8px 0;
 }
 
 .venue-line {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
   font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 8px 0 24px;
-  line-height: 1.9;
+  margin: 8px 0 26px;
+  line-height: 2;
 }
 
-/* Rules (reference template dividers) */
+/* Rules */
 .rule {
   width: 100%;
   height: 1px;
   background: var(--rule);
-  margin: 26px auto;
+  margin: 30px auto;
 }
 
 .rule.short {
   width: 90px;
-  margin: 20px auto;
+  margin: 22px auto;
 }
 
 /* Countdown */
 .countdown {
-  margin: 20px 0 4px;
+  margin: 22px 0 4px;
 }
 
 .cd-wrapper {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
@@ -216,17 +248,18 @@ body {
 }
 
 .cd-value {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--ivory);
-  min-width: 44px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--gold);
+  min-width: 46px;
+  line-height: 1.1;
 }
 
 .cd-unit {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -235,85 +268,47 @@ body {
 .map-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 26px;
+  gap: 9px;
+  padding: 13px 28px;
   border-radius: 999px;
-  background-color: var(--maroon);
-  color: #161514;
-  font-weight: 600;
+  background-color: var(--rose);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 1px;
   text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
+  font-size: 13px;
+  transition: all 0.25s ease;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .map-btn:hover {
   background-color: #dda0aa;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(201, 138, 149, 0.3);
+  box-shadow: 0 6px 18px rgba(201, 138, 149, 0.28);
 }
 
 .map-btn:active {
   transform: scale(0.98);
 }
 
-/* ========== Photo bands — pristine images, no filter ========== */
-.photo-band {
-  position: relative;
-  width: 100%;
-  max-width: 440px;
-  margin: 34px auto 0;
-  height: 380px;
-  background-color: #0f0e0e;
-  background-image: var(--bg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
-}
-
-/* Face-aware positions for each band */
-.band-bride {
-  background-position: center 10%; /* bride's face sits ~14% down */
-}
-
-.band-groom {
-  background-position: center 42%; /* groom's face sits ~43% down */
-}
-
-.band-caption {
-  max-width: 440px;
-  margin: 14px auto 0;
-  padding: 0 20px;
-  text-align: center;
-  font-family: 'Great Vibes', cursive;
-  font-size: 26px;
-  color: var(--ivory);
-}
-
 /* ========== Timeline ========== */
-.timeline-section {
-  max-width: 440px;
-  margin: 44px auto 0;
-  padding: 0 20px;
-}
-
 .section-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 22px;
+  margin: 40px 0 22px;
   text-align: center;
 }
 
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .timeline-item {
@@ -321,74 +316,109 @@ body {
   align-items: flex-start;
   gap: 14px;
   text-align: left;
-  background: rgba(245, 242, 238, 0.04);
-  border-left: 3px solid var(--gold);
-  border-radius: 12px;
-  padding: 16px;
+  background: rgba(245, 242, 238, 0.05);
+  border-left: 2px solid var(--gold);
+  border-radius: 2px 12px 12px 2px;
+  padding: 18px 18px 18px 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .timeline-marker {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background: var(--gold);
-  color: #161514;
+  color: var(--ink);
   border-radius: 50%;
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .timeline-content h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
   color: var(--ivory);
   margin-bottom: 6px;
   letter-spacing: 0.5px;
 }
 
 .timeline-content p {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.85;
   margin: 0;
+}
+
+/* ========== Photo bands — pristine images ========== */
+.photo-band {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 40px auto 0;
+  height: 380px;
+  background-color: #0f0e0e;
+  background-image: var(--bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.band-couple {
+  background-position: center 38%;
+}
+
+.band-bride {
+  background-position: center 10%;
+}
+
+.band-caption {
+  max-width: 440px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 30px;
+  color: var(--ivory);
 }
 
 /* ========== Footer ========== */
 .footer {
-  margin-top: 50px;
-  padding: 46px 20px 70px;
+  margin-top: 56px;
+  padding: 48px 20px 70px;
   background: var(--bg);
   text-align: center;
   border-top: 1px solid rgba(245, 242, 238, 0.08);
 }
 
 .footer-quote {
-  font-family: 'Great Vibes', cursive;
-  font-size: 24px;
+  font-family: var(--font-script);
+  font-size: 27px;
   color: var(--ivory);
-  margin-bottom: 18px;
-  font-style: italic;
+  margin-bottom: 20px;
 }
 
 .footer-signoff {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 3px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--ivory);
   margin-bottom: 8px;
 }
 
 .footer-copy {
-  font-size: 10px;
-  color: rgba(245, 242, 238, 0.35);
+  font-size: 9px;
+  color: rgba(245, 242, 238, 0.32);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -426,10 +456,10 @@ html {
     min-height: 460px;
   }
   .wedding-script {
-    font-size: 92px;
+    font-size: 104px;
   }
   .names {
-    font-size: 46px;
+    font-size: 50px;
   }
   .photo-band {
     height: 460px;
