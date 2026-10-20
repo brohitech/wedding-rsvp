@@ -117,6 +117,7 @@ body {
   letter-spacing: 1px;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
   padding: 0 24px;
+  animation: floatY 8s ease-in-out infinite;
 }
 
 /* ========== Image-background sections ========== */
@@ -179,9 +180,10 @@ body {
   font-weight: 400;
   line-height: 1;
   margin: 0;
+  animation: floatY 7s ease-in-out infinite;
 }
 
-/* Names */
+/* Names — staggered letter reveal */
 .names {
   font-family: var(--font-display);
   font-size: 42px;
@@ -190,6 +192,44 @@ body {
   letter-spacing: 2px;
   line-height: 1.2;
   margin: 16px 0 0;
+}
+
+.ltr {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.4em);
+  animation: ltrIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ltrIn {
+  0% { opacity: 0; transform: translateY(0.4em); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Shimmer sweep across highlighted text */
+.shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--ivory) 35%,
+    var(--gold) 50%,
+    var(--ivory) 65%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3.6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 160% 0; }
+  100% { background-position: -60% 0; }
 }
 
 .names .heart {
@@ -218,6 +258,15 @@ body {
   text-transform: uppercase;
   color: var(--ivory);
   margin: 0 0 4px;
+}
+
+.days-to-go .shimmer {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  vertical-align: -1px;
+  margin-right: 4px;
 }
 
 .date-repeat {
@@ -280,6 +329,17 @@ body {
   color: var(--gold);
   min-width: 46px;
   line-height: 1.1;
+  display: inline-block;
+}
+
+/* Tick when the value changes */
+.cd-value.tick {
+  animation: tick 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes tick {
+  0% { transform: translateY(-0.28em) scale(0.9); opacity: 0.35; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .cd-unit {
@@ -417,6 +477,23 @@ body {
   text-transform: uppercase;
 }
 
+/* ========== Scroll reveal ========== */
+.invitation .container,
+.details .container,
+.footer .container {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.invitation .container.is-visible,
+.details .container.is-visible,
+.footer .container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ========== Mobile Optimizations ========== */
 body {
   max-width: 100vw;
@@ -437,6 +514,32 @@ body {
 
 html {
   -webkit-text-size-adjust: 100%;
+}
+
+/* ========== Reduced motion — respect user preference ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ltr,
+  .invitation .container,
+  .details .container,
+  .footer .container {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .shimmer {
+    background: none;
+    color: var(--ivory);
+    -webkit-text-fill-color: var(--ivory);
+  }
 }
 
 /* ========== Desktop ========== */
