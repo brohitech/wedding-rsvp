@@ -183,16 +183,23 @@ body {
   animation: floatY 7s ease-in-out infinite;
 }
 
-/* Names — staggered letter reveal */
+/* Names — stacked in three lines: Sai Nandhan / heart / Sowmya */
 .names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   font-family: var(--font-display);
-  font-size: clamp(25px, 7.4vw, 38px);
+  font-size: clamp(28px, 9vw, 46px);
   font-weight: 400;
   color: var(--ivory);
   letter-spacing: normal;
-  line-height: 1.25;
+  line-height: 1.2;
   margin: 16px 0 0;
-  /* Keep the full name on a single line */
+}
+
+.name-part {
+  display: block;
   white-space: nowrap;
 }
 
@@ -245,10 +252,11 @@ body {
 }
 
 .names .heart {
+  display: block;
   color: var(--rose);
-  font-size: 0.72em;
-  margin: 0 0.12em;
-  vertical-align: middle;
+  font-size: 0.68em;
+  line-height: 1.1;
+  margin: 4px 0 2px;
 }
 
 /* Invitation message */
