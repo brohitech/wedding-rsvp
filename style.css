@@ -69,18 +69,27 @@ body {
   color: var(--ivory);
 }
 
-/* ========== Hero — pristine photo ========== */
+/* ========== Hero — featured photo, highlighted at top ========== */
 .hero {
   position: relative;
   width: 100%;
-  height: 62vh;
-  min-height: 420px;
+  height: 74vh;
+  min-height: 520px;
   overflow: hidden;
   background-color: #0f0e0e;
   background-image: var(--bg);
   background-size: cover;
   background-position: center 38%; /* couple faces sit ~40% down */
   background-repeat: no-repeat;
+}
+
+/* Delicate gold hairline framing the featured photo */
+.hero-frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero-fade {
@@ -91,6 +100,23 @@ body {
   height: 110px;
   background: linear-gradient(180deg, rgba(22, 21, 20, 0) 0%, rgba(22, 21, 20, 0.97) 100%);
   pointer-events: none;
+  z-index: 3;
+}
+
+/* Caption overlaying the featured photo */
+.hero-caption {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 34px;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 34px;
+  color: var(--ivory);
+  letter-spacing: 1px;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+  padding: 0 24px;
 }
 
 /* ========== Image-background sections ========== */
@@ -358,38 +384,6 @@ body {
   margin: 0;
 }
 
-/* ========== Photo bands — pristine images ========== */
-.photo-band {
-  position: relative;
-  width: 100%;
-  max-width: 440px;
-  margin: 40px auto 0;
-  height: 380px;
-  background-color: #0f0e0e;
-  background-image: var(--bg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
-}
-
-.band-couple {
-  background-position: center 38%;
-}
-
-.band-bride {
-  background-position: center 10%;
-}
-
-.band-caption {
-  max-width: 440px;
-  margin: 16px auto 0;
-  padding: 0 20px;
-  text-align: center;
-  font-family: var(--font-script);
-  font-size: 30px;
-  color: var(--ivory);
-}
-
 /* ========== Footer ========== */
 .footer {
   margin-top: 56px;
@@ -439,10 +433,6 @@ body {
     padding-right: max(20px, env(safe-area-inset-right));
     padding-bottom: max(70px, env(safe-area-inset-bottom));
   }
-  .photo-band {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
 }
 
 html {
@@ -452,16 +442,17 @@ html {
 /* ========== Desktop ========== */
 @media (min-width: 600px) {
   .hero {
-    height: 58vh;
-    min-height: 460px;
+    height: 70vh;
+    min-height: 560px;
+  }
+  .hero-caption {
+    font-size: 42px;
+    bottom: 42px;
   }
   .wedding-script {
     font-size: 104px;
   }
   .names {
     font-size: 50px;
-  }
-  .photo-band {
-    height: 460px;
   }
 }
