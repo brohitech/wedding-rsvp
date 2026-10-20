@@ -1,8 +1,18 @@
-/* ========== Reset & Base ========== */
+/* ========== Reset & Base — DARK THEME (reference template) ========== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --bg: #161514;
+  --bg-soft: #1e1c1b;
+  --ivory: #f5f2ee;
+  --muted: #b3aaa2;
+  --gold: #d4af37;
+  --maroon: #c98a95;
+  --rule: rgba(245, 242, 238, 0.28);
 }
 
 html {
@@ -12,22 +22,22 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', 'Lato', sans-serif;
-  background: #fdfbf7;
-  color: #1a1a1a;
+  background: var(--bg);
+  color: var(--ivory);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ========== Navigation (reference template — light bar above the photo) ========== */
+/* ========== Navigation — dark bar (reference template) ========== */
 .nav {
   position: sticky;
   top: 0;
   width: 100%;
   padding: 16px 20px;
   z-index: 100;
-  background: #fdfbf7;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: var(--bg);
+  border-bottom: 1px solid rgba(245, 242, 238, 0.07);
 }
 
 .nav-content {
@@ -41,7 +51,7 @@ body {
 .nav-menu {
   background: none;
   border: none;
-  color: #1a1a1a;
+  color: var(--ivory);
   font-size: 24px;
   cursor: pointer;
   line-height: 1;
@@ -52,35 +62,35 @@ body {
   font-size: 19px;
   font-weight: 700;
   letter-spacing: 5px;
-  color: #1a1a1a;
+  color: var(--ivory);
 }
 
-/* ========== Hero — pristine photo, no filter, no dark scrim ========== */
+/* ========== Hero — pristine photo, no filter / no scrim ========== */
 .hero {
   position: relative;
   width: 100%;
   height: 62vh;
   min-height: 420px;
   overflow: hidden;
-  background-color: #fdfbf7;
+  background-color: #0f0e0e;
   background-image: var(--bg);
   background-size: cover;
   background-position: center 38%; /* couple faces sit ~40% down — keep them framed */
   background-repeat: no-repeat;
 }
 
-/* Soft fade into the ivory block below — blends the edge, not the photo tone */
+/* Soft fade into the dark block below — blends the edge, not the photo tone */
 .hero-fade {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 90px;
-  background: linear-gradient(180deg, rgba(253, 251, 247, 0) 0%, rgba(253, 251, 247, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(22, 21, 20, 0) 0%, rgba(22, 21, 20, 0.96) 100%);
   pointer-events: none;
 }
 
-/* ========== Main content — ivory editorial block ========== */
+/* ========== Main content — dark editorial block ========== */
 .content {
   position: relative;
   z-index: 5;
@@ -94,20 +104,20 @@ body {
   text-align: center;
 }
 
-/* The Wedding of */
+/* The / Wedding / of */
 .wedding-label {
   font-family: 'Playfair Display', serif;
   font-size: 19px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--ivory);
   margin: 18px 0 4px;
-  letter-spacing: 3px;
+  letter-spacing: 6px;
 }
 
 .wedding-script {
   font-family: 'Great Vibes', cursive;
   font-size: 78px;
-  color: #1a1a1a;
+  color: var(--ivory);
   font-weight: 400;
   line-height: 1;
   margin: 0;
@@ -117,81 +127,84 @@ body {
 /* Names */
 .names {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: 2px;
-  line-height: 1.2;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--ivory);
+  letter-spacing: 3px;
+  line-height: 1.25;
   margin: 14px 0 0;
 }
 
 .names .heart {
-  color: #b56576;
-  font-size: 32px;
-  margin: 0 6px;
+  color: var(--maroon);
+  font-size: 30px;
+  margin: 0 4px;
 }
 
 /* Date & venue */
 .date-line {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+}
+
+.days-to-go {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #6b6572;
-  margin: 18px 0 6px;
+  color: var(--ivory);
+  margin: 0 0 6px;
 }
 
 .date-repeat {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ivory);
   margin: 8px 0;
-  letter-spacing: 2px;
 }
 
 .venue-line {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  font-style: italic;
-  color: #6b6572;
-  margin: 8px 0 22px;
-  line-height: 1.7;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 8px 0 24px;
+  line-height: 1.9;
 }
 
 /* Rules (reference template dividers) */
 .rule {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.18);
+  background: var(--rule);
   margin: 26px auto;
 }
 
 .rule.short {
   width: 90px;
-  margin: 18px auto;
+  margin: 20px auto;
 }
 
 /* Countdown */
 .countdown {
-  margin: 22px 0 6px;
-}
-
-.cd-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #b56576;
-  margin-bottom: 12px;
-  display: block;
+  margin: 20px 0 4px;
 }
 
 .cd-wrapper {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -206,16 +219,16 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--ivory);
   min-width: 44px;
 }
 
 .cd-unit {
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #8a4b56;
+  color: var(--muted);
 }
 
 /* Map Button */
@@ -223,10 +236,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 999px;
-  background-color: #8a4b56;
-  color: #ffffff;
+  background-color: var(--maroon);
+  color: #161514;
   font-weight: 600;
   text-decoration: none;
   font-size: 14px;
@@ -237,9 +250,9 @@ body {
 }
 
 .map-btn:hover {
-  background-color: #6f3d48;
+  background-color: #dda0aa;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(138, 75, 86, 0.25);
+  box-shadow: 0 4px 14px rgba(201, 138, 149, 0.3);
 }
 
 .map-btn:active {
@@ -253,11 +266,11 @@ body {
   max-width: 440px;
   margin: 34px auto 0;
   height: 380px;
-  background-color: #f0ece4;
+  background-color: #0f0e0e;
   background-image: var(--bg);
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 
 /* Face-aware positions for each band */
@@ -276,23 +289,24 @@ body {
   text-align: center;
   font-family: 'Great Vibes', cursive;
   font-size: 26px;
-  color: #8a4b56;
+  color: var(--ivory);
 }
 
 /* ========== Timeline ========== */
 .timeline-section {
   max-width: 440px;
-  margin: 40px auto 0;
+  margin: 44px auto 0;
   padding: 0 20px;
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
   margin-bottom: 22px;
-  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -307,8 +321,8 @@ body {
   align-items: flex-start;
   gap: 14px;
   text-align: left;
-  background: rgba(138, 75, 86, 0.05);
-  border-left: 4px solid #8a4b56;
+  background: rgba(245, 242, 238, 0.04);
+  border-left: 3px solid var(--gold);
   border-radius: 12px;
   padding: 16px;
 }
@@ -316,8 +330,8 @@ body {
 .timeline-marker {
   width: 24px;
   height: 24px;
-  background: #d4af37;
-  color: #1a1a1a;
+  background: var(--gold);
+  color: #161514;
   border-radius: 50%;
   font-family: 'Playfair Display', serif;
   font-size: 13px;
@@ -333,14 +347,14 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--ivory);
   margin-bottom: 6px;
   letter-spacing: 0.5px;
 }
 
 .timeline-content p {
   font-size: 14px;
-  color: #6b6572;
+  color: var(--muted);
   line-height: 1.7;
   margin: 0;
 }
@@ -348,32 +362,34 @@ body {
 /* ========== Footer ========== */
 .footer {
   margin-top: 50px;
-  padding: 40px 20px 70px;
-  background: #fdfbf7;
+  padding: 46px 20px 70px;
+  background: var(--bg);
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(245, 242, 238, 0.08);
 }
 
 .footer-quote {
   font-family: 'Great Vibes', cursive;
   font-size: 24px;
-  color: #6b6572;
-  margin-bottom: 16px;
+  color: var(--ivory);
+  margin-bottom: 18px;
   font-style: italic;
 }
 
 .footer-signoff {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  color: #1a1a1a;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ivory);
+  margin-bottom: 8px;
 }
 
 .footer-copy {
   font-size: 10px;
-  color: rgba(0, 0, 0, 0.4);
-  letter-spacing: 1px;
+  color: rgba(245, 242, 238, 0.35);
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
@@ -413,7 +429,7 @@ html {
     font-size: 92px;
   }
   .names {
-    font-size: 48px;
+    font-size: 46px;
   }
   .photo-band {
     height: 460px;
