@@ -10,80 +10,239 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="card">
-    <div class="avatars">
-      <div class="avatar side left">
-        <img src="images/couple-2.jpeg" alt="Bride" />
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav">
+    <div class="nav-content">
+      <button class="nav-menu" aria-label="Menu">☰</button>
+      <div class="nav-monogram">S &amp; S</div>
+      <a href="#rsvp" class="nav-rsvp">RSVP</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION (Image Background) ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('images/IMG_4050.JPG.jpeg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">The Jinka Family cordially invites you</div>
+      <div class="hero-divider">•</div>
+      <h1 class="hero-script">The Wedding of</h1>
+      <h2 class="hero-names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h2>
+      <div class="hero-divider">•</div>
+      <div class="hero-date">29th &amp; 30th October 2026</div>
+      <div class="hero-venue">Sri Vasavi Cotton Merchants Kalyana Mandapam<br>Proddatur</div>
+      <div class="hero-countdown">
+        <span class="cd-label">Countdown</span>
+        <div class="cd-wrapper">
+          <span id="cd-days" class="cd-value">00</span><span class="cd-unit">D</span>
+          <span id="cd-hours" class="cd-value">00</span><span class="cd-unit">H</span>
+          <span id="cd-minutes" class="cd-value">00</span><span class="cd-unit">M</span>
+          <span id="cd-seconds" class="cd-value">00</span><span class="cd-unit">S</span>
+        </div>
       </div>
-      <div class="avatar center">
-        <img src="images/couple-1.jpeg" alt="Couple" />
+      <a href="#details" class="hero-cta">View Details →</a>
+    </div>
+    <a href="#details" class="hero-scroll">
+      <span>Scroll</span>
+      <svg class="scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </a>
+  </section>
+
+  <!-- ========== DETAILS / EVENTS ========== -->
+  <section id="details" class="details">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Celebration Timeline</h2>
+        <p class="section-sub">Join us for a weekend of love and joy</p>
       </div>
-      <div class="avatar side right">
-        <img src="images/couple-3.jpeg" alt="Groom" />
+
+      <div class="timeline">
+        <div class="timeline-item reveal delay-200">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h3 class="event-title">Reception & Orchestra</h3>
+            <div class="event-meta">
+              <span class="event-icon">📅</span>
+              <span>Thursday, 29th October 2026</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-icon">🕖</span>
+              <span>7:00 PM onwards</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-icon">🍽️</span>
+              <span>Dinner: 7:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-400">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h3 class="event-title">Wedding Ceremony</h3>
+            <div class="event-meta">
+              <span class="event-icon">📅</span>
+              <span>Friday, 30th October 2026</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-icon">🌸</span>
+              <span>Upanayanam & Kasi Yatra: 6:00 AM</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-icon">💍</span>
+              <span>Wedding Muhurtham: 7:49 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="venue-card reveal delay-600">
+        <h3 class="venue-title">Venue</h3>
+        <p class="venue-name">Sri Vasavi Cotton Merchants Kalyana Mandapam</p>
+        <p class="venue-address">Saraswathi Vidya Mandiram Road,<br>Y.M.R. Colony, Proddatur.</p>
+        <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-btn" target="_blank" rel="noopener">
+          View on Google Maps
+        </a>
       </div>
     </div>
+  </section>
 
-    <header class="header">
-      <p class="invite-from">The Jinka Family cordially invites you,</p>
-      <p class="invite-with">along with your family and friends, to celebrate the joyous wedding of</p>
-      <h1 class="names">Sai Nandhan <span class="heart">❤️</span> Sowmya</h1>
-    </header>
+  <!-- ========== GALLERY (Images in Background / Featured) ========== -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="gallery-frame" style="background-image: url('images/IMG_4165.JPG.jpeg')"></div>
+        <div class="gallery-caption">Moments of love</div>
+      </div>
+      <div class="gallery-item reveal delay-200">
+        <div class="gallery-frame" style="background-image: url('images/IMG_4174.JPG.jpeg')"></div>
+        <div class="gallery-caption">Forever begins</div>
+      </div>
+      <div class="gallery-item reveal delay-400">
+        <div class="gallery-frame" style="background-image: url('images/IMG_4050.JPG.jpeg')"></div>
+        <div class="gallery-caption">Together always</div>
+      </div>
+    </div>
+  </section>
 
-    <section class="schedule">
-      <div class="day-card">
-        <h2 class="day-title">Day 1 – Reception & Orchestra</h2>
-        <div class="detail-row">
-          <span class="detail-icon">📅</span>
-          <span>Thursday, 29th October 2026</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-icon">🕖</span>
-          <span>Reception: 7:00 PM onwards</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-icon">🍽️</span>
-          <span>Dinner: 7:30 PM</span>
-        </div>
+  <!-- ========== RSVP ========== -->
+  <section id="rsvp" class="rsvp">
+    <div class="container">
+      <div class="section-header reveal text-center">
+        <h2 class="section-title">RSVP</h2>
+        <p class="section-sub">Kindly respond by 15th October 2026</p>
       </div>
 
-      <div class="day-card">
-        <h2 class="day-title">Day 2 – Wedding Ceremony</h2>
-        <div class="detail-row">
-          <span class="detail-icon">📅</span>
-          <span>Friday, 30th October 2026</span>
+      <form class="rsvp-form reveal" id="rsvp-form">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" name="name" placeholder="e.g. Rohan & Priya" required />
         </div>
-        <div class="detail-row">
-          <span class="detail-icon">🌸</span>
-          <span>Upanayanam &amp; Kasi Yatra: 6:00 AM</span>
+
+        <div class="form-group">
+          <label class="form-label">Attendance</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="attending" value="attending" />
+              <span class="radio-check"></span>
+              <span>Attending</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="attending" value="declining" />
+              <span class="radio-check"></span>
+              <span>Respectfully Declining</span>
+            </label>
+          </div>
         </div>
-        <div class="detail-row">
-          <span class="detail-icon">💍</span>
-          <span>Wedding Muhurtham: 7:49 AM</span>
+
+        <div class="form-group">
+          <label class="form-label">Dietary Restrictions</label>
+          <textarea name="dietary" rows="3" placeholder="Any allergies or preferences..."></textarea>
         </div>
+
+        <div class="form-group">
+          <label class="form-label">Song Request</label>
+          <input type="text" name="song" placeholder="A song you'd love to hear..." />
+        </div>
+
+        <button type="submit" class="rsvp-btn">Send Response</button>
+      </form>
+
+      <div class="rsvp-success hidden" id="rsvp-success">
+        <div class="success-check">✓</div>
+        <h3>Thank you!</h3>
+        <p>We've received your response and can't wait to celebrate with you.</p>
+        <button type="button" class="rsvp-btn outline" onclick="resetRSVP()">Send another response</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="venue">
-      <h2 class="venue-title">Venue</h2>
-      <p class="venue-name">Sri Vasavi Cotton Merchants Kalyana Mandapam</p>
-      <p class="venue-address">Saraswathi Vidya Mandiram Road,<br>Y.M.R. Colony, Proddatur.</p>
-      <a href="https://maps.app.goo.gl/JDwc88b1Xeef67Qn8" class="map-link" target="_blank" rel="noopener">
-        📍 View on Google Maps
-      </a>
-    </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-quote">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
+      <p class="footer-signoff">Sai Nandhan &amp; Sowmya • October 2026 • Proddatur</p>
+      <p class="footer-copy">Designed with love for the Jinka Family</p>
+    </div>
+  </footer>
 
-    <section class="message">
-      <p class="message-text">
-        Your gracious presence and blessings will make our celebrations truly memorable.<br>
-        We warmly welcome you to join us in celebrating this beautiful beginning.
-      </p>
-    </section>
+  <script>
+    // Countdown timer
+    const countdownDate = new Date('October 29, 2026 00:00:00').getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const elDays = document.getElementById('cd-days');
+      const elHours = document.getElementById('cd-hours');
+      const elMins = document.getElementById('cd-minutes');
+      const elSecs = document.getElementById('cd-seconds');
+      if (elDays) elDays.textContent = String(days).padStart(2, '0');
+      if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+      if (elMins) elMins.textContent = String(minutes).padStart(2, '0');
+      if (elSecs) elSecs.textContent = String(seconds).padStart(2, '0');
+      if (distance < 0) {
+        clearInterval(timer);
+        [elDays, elHours, elMins, elSecs].forEach(el => { if (el) el.textContent = '00'; });
+      }
+    }, 1000);
 
-    <footer class="card-footer">
-      <p class="regards">With love and warm regards,</p>
-      <p class="hosts">Sri J. Ravindra &amp; Smt. Hymavathi &amp; Sai Nandhan Jinka</p>
-      <p class="card-footer-note">Jinka Family Wedding • October 2026 • Proddatur</p>
-    </footer>
-  </div>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // RSVP form
+    const form = document.getElementById('rsvp-form');
+    const success = document.getElementById('rsvp-success');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    });
+    window.resetRSVP = () => {
+      form.classList.remove('hidden');
+      success.classList.add('hidden');
+      form.reset();
+    };
+  </script>
 </body>
 </html>
